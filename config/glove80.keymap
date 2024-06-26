@@ -265,7 +265,7 @@
 / {
 // NOTE: Use the `#define` settings below to customize this keymap!
 // For example, here are the main optional features you can enable:
-#define DIFFICULTY_LEVEL  5 // 0:custom, 1:easy -> 5:hard (see below)
+#define DIFFICULTY_LEVEL  0 // 0:custom, 1:easy -> 5:hard (see below)
 // TIP: Add more setting overrides here instead of editing them below.
 
 //////////////////////////////////////////////////////////////////////////////
@@ -323,7 +323,7 @@ behaviors {
     // (i.e. "register" them) for mod-click mouse usage (e.g. Ctrl-Click).
     //
     #ifndef HOMEY_HOLDING_TIME
-    #define HOMEY_HOLDING_TIME 270 // TAPPING_TERM + ALLOW_CROSSOVER_AFTER
+    #define HOMEY_HOLDING_TIME 170 // TAPPING_TERM + ALLOW_CROSSOVER_AFTER
     #endif
 
     //
@@ -727,12 +727,12 @@ behaviors {
 
         layer_Base {
             bindings = <
-               &kp F1              &kp F2              &kp F3               &kp F4               &kp F5                                                                                              &kp F6                &kp F7               &kp F8               &kp F9               &kp F10
-            &kp GRAVE              &kp N1              &kp N2               &kp N3               &kp N4  &kp N5                                                                &kp N6                &kp N7                &kp N8               &kp N9               &kp N0             &kp MINUS
-            &kp EQUAL               &kp Q  &left_ring2 RALT W                &kp E                &kp R   &kp T                                                                 &kp Y                 &kp U                 &kp I  &right_ring2 RALT O                &kp P              &kp LBKT
-           &caps_word  &left_pinky LGUI A  &left_ring1 LALT S  &left_middy LCTRL D  &left_index LSHFT F   &kp G                                                                 &kp H  &right_index LSHFT J  &right_middy LCTRL K  &right_ring1 LALT L  &right_pinky LGUI SEMI            &kp SQT
-      &kp NON_US_BSLH               &kp Z               &kp X                &kp C                &kp V   &kp B   &kp ESC  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT      &kp RET   &kp N                 &kp M             &kp COMMA              &kp DOT             &kp FSLH              &kp RBKT
- &magic LAYER_Magic 0            &kp HOME           &kp PG_UP            &kp PG_DN              &kp END          &kp BSPC   &kp DEL    &lower  &lower    &kp TAB  &lt 3 SPACE                        &kp UP              &kp DOWN           &kp C_MENU             &kp BSLH  &magic LAYER_Magic 0
+               &kp F1              &kp F2              &kp F3               &kp F4               &kp F5                                                                                              &kp F6                &kp F7               &kp F8                  &kp F9               &kp F10
+            &kp GRAVE              &kp N1              &kp N2               &kp N3               &kp N4  &kp N5                                                                &kp N6                &kp N7                &kp N8               &kp N9                  &kp N0             &kp MINUS
+            &kp EQUAL               &kp Q  &left_ring2 RALT W                &kp E                &kp R   &kp T                                                                 &kp Y                 &kp U                 &kp I  &right_ring2 RALT O                   &kp P              &kp LBKT
+           &caps_word  &left_pinky LGUI A  &left_ring1 LALT S  &left_middy LCTRL D  &left_index LSHFT F   &kp G                                                                 &kp H  &right_index LSHFT J  &right_middy LCTRL K  &right_ring1 LALT L  &right_pinky LGUI SEMI               &kp SQT
+      &kp NON_US_BSLH               &kp Z               &kp X                &kp C                &kp V   &kp B   &kp ESC  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT      &kp RET   &kp N                 &kp M             &kp COMMA              &kp DOT                &kp FSLH              &kp RBKT
+ &magic LAYER_Magic 0            &kp HOME           &kp PG_UP            &kp PG_DN              &kp END          &kp BSPC   &kp DEL    &lower  &lower    &kp TAB  &lt 3 SPACE                        &kp UP              &kp DOWN           &kp C_MENU                &kp BSLH  &magic LAYER_Magic 0
             >;
         };
 
@@ -760,12 +760,12 @@ behaviors {
 
         layer_Symbol {
             bindings = <
-            &none            &none           &none           &none                &none                                                                                                    &none        &none      &none     &none   &none
-            &none    &kp LS(EQUAL)      &kp LS(N8)      &kp LS(N9)        &kp LS(COMMA)      &kp COMMA                                                                          &none      &none        &none      &none     &none   &none
-       &kp LS(N1)   &kp LC(LA(N7))        &kp BSLH      &kp LS(N2)       &kp LC(LA(N0))  &kp LS(MINUS)                                                                  &kp LS(COMMA)  &kp RSHFT    &kp LCTRL   &kp LALT  &kp RGUI   &none
-       &kp LS(N3)     &kp LS(RBKT)      &kp LS(N0)    &kp LS(FSLH)       &kp LC(LA(N4))   &kp LS(BSLH)                                                                        &kp DOT   &kp BSPC      &kp TAB  &kp SPACE   &kp RET   &none
-   &kp LC(LA(N2))  &kp NON_US_BSLH       &kp GRAVE        &kp FSLH  &kp LS(NON_US_BSLH)      &kp EQUAL       &none        &none          &none   &none   &none   &none     &kp LS(N7)    &kp DEL  &kp LS(TAB)      &none     &none   &none
- &kp LC(LA(RBKT))       &kp LS(N6)  &kp LC(LA(N8))  &kp LC(LA(N9))            &kp MINUS                 &kp LS(N5)  &kp LS(DOT)  &kp LS(COMMA)   &none   &none   &none                     &none        &none      &none     &none   &none
+        &none            &none       &none         &none                &none                                                                                                    &none        &none      &none     &none   &none
+        &none    &kp LS(EQUAL)  &kp LS(N8)    &kp LS(N9)        &kp LS(COMMA)      &kp COMMA                                                                          &none      &none        &none      &none     &none   &none
+   &kp LS(N1)       &kp RA(N7)    &kp BSLH    &kp LS(N2)           &kp RA(N0)  &kp LS(MINUS)                                                                  &kp LS(COMMA)  &kp RSHFT    &kp LCTRL   &kp LALT  &kp RGUI   &none
+   &kp LS(N3)     &kp LS(RBKT)  &kp LS(N0)  &kp LS(FSLH)           &kp RA(N4)   &kp LS(BSLH)                                                                        &kp DOT   &kp BSPC      &kp TAB  &kp SPACE   &kp RET   &none
+   &kp RA(N2)  &kp NON_US_BSLH   &kp GRAVE      &kp FSLH  &kp LS(NON_US_BSLH)      &kp EQUAL       &none        &none          &none   &none   &none   &none     &kp LS(N7)    &kp DEL  &kp LS(TAB)      &none     &none   &none
+ &kp RA(RBKT)       &kp LS(N6)  &kp RA(N8)    &kp RA(N9)            &kp MINUS                 &kp LS(N5)  &kp LS(DOT)  &kp LS(COMMA)   &none   &none   &none                     &none        &none      &none     &none   &none
             >;
         };
 
