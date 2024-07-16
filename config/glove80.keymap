@@ -490,6 +490,15 @@ behaviors {
     #ifndef LEFT_PINKY_REPEAT_DECAY
     #define LEFT_PINKY_REPEAT_DECAY PINKY_REPEAT_DECAY
     #endif
+    #ifndef THUMB_HOLDING_TYPE
+    #define THUMB_HOLDING_TYPE HOMEY_HOLDING_TYPE
+    #endif
+    #ifndef THUMB_HOLDING_TIME
+    #define THUMB_HOLDING_TIME HOMEY_HOLDING_TIME
+    #endif
+    #ifndef THUMB_REPEAT_DECAY
+    #define THUMB_REPEAT_DECAY HOMEY_REPEAT_DECAY
+    #endif
     left_pinky: homey_left_pinky {
         compatible = "zmk,behavior-hold-tap";
         flavor = LEFT_PINKY_HOLDING_TYPE;
@@ -709,6 +718,32 @@ behaviors {
         bindings = <&kp>, <&kp>;
     };
 
+    thumb: thumb_layer_access {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = THUMB_HOLDING_TYPE;
+        tapping-term-ms = <THUMB_HOLDING_TIME>;
+        quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
+        #binding-cells = <2>;
+        bindings = <&mo>, <&kp>;
+    };
+
+    #ifndef SPACE_HOLDING_TYPE
+    #define SPACE_HOLDING_TYPE THUMB_HOLDING_TYPE
+    #endif
+    #ifndef SPACE_HOLDING_TIME
+    #define SPACE_HOLDING_TIME THUMB_HOLDING_TIME
+    #endif
+    #ifndef SPACE_REPEAT_DECAY
+    #define SPACE_REPEAT_DECAY THUMB_REPEAT_DECAY
+    #endif
+    space: thumb_layer_access_spacebar {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = SPACE_HOLDING_TYPE;
+        tapping-term-ms = <SPACE_HOLDING_TIME>;
+        quick-tap-ms = <SPACE_REPEAT_DECAY>; // enable repeat
+        #binding-cells = <2>;
+        bindings = <&mo>, <&kp>;
+    };
 };
 };
 
@@ -731,8 +766,8 @@ behaviors {
             &kp GRAVE              &kp N1              &kp N2               &kp N3               &kp N4  &kp N5                                                                &kp N6                &kp N7                &kp N8               &kp N9                  &kp N0             &kp MINUS
             &kp EQUAL               &kp Q  &left_ring2 RALT W                &kp E                &kp R   &kp T                                                                 &kp Y                 &kp U                 &kp I  &right_ring2 RALT O                   &kp P              &kp LBKT
            &caps_word  &left_pinky LGUI A  &left_ring1 LALT S  &left_middy LCTRL D  &left_index LSHFT F   &kp G                                                                 &kp H  &right_index LSHFT J  &right_middy LCTRL K  &right_ring1 LALT L  &right_pinky LGUI SEMI               &kp SQT
-      &kp NON_US_BSLH               &kp Z               &kp X                &kp C                &kp V   &kp B   &kp ESC  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT      &kp RET   &kp N                 &kp M             &kp COMMA              &kp DOT                &kp FSLH              &kp RBKT
- &magic LAYER_Magic 0            &kp HOME           &kp PG_UP            &kp PG_DN              &kp END          &kp BSPC   &kp DEL    &lower  &lower    &kp TAB  &lt 3 SPACE                        &kp UP              &kp DOWN           &kp C_MENU                &kp BSLH  &magic LAYER_Magic 0
+      &kp NON_US_BSLH               &kp Z               &kp X                &kp C                &kp V   &kp B   &kp ESC  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT      &kp RET   &kp N                 &kp M             &kp COMMA              &kp DOT                &kp FSLH              &kp BSLH
+ &magic LAYER_Magic 0            &kp HOME           &kp PG_UP            &kp PG_DN              &kp END          &kp BSPC   &kp DEL    &lower  &lower    &kp TAB  &lt 3 SPACE                      &kp DOWN                &kp UP           &kp C_MENU                &kp RBKT  &magic LAYER_Magic 0
             >;
         };
 
